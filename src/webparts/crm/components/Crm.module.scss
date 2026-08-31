@@ -1,0 +1,405 @@
+.crm {
+  width: 100%;
+  min-height: 700px;
+  background: #f8fafc;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #111827;
+}
+
+/* =====================================================
+   TOP NAVIGATION
+   ===================================================== */
+
+.topNavigation {
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+/* Brand */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logoIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.brandText strong {
+  display: block;
+  font-size: 14px;
+  color: #111827;
+}
+
+.brandText span {
+  display: block;
+  margin-top: 2px;
+  font-size: 9px;
+  color: #9ca3af;
+}
+
+/* Navigation */
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navButton,
+.activeNav {
+  border: none;
+  background: transparent;
+  padding: 9px 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.navButton {
+  color: #6b7280;
+}
+
+.navButton:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.activeNav {
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* =====================================================
+   MAIN CONTENT
+   ===================================================== */
+
+.mainContent {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =====================================================
+   HOME
+   ===================================================== */
+
+.home {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 50px 55px;
+  box-sizing: border-box;
+}
+
+.homeHeader {
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.homeHeader h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #111827;
+  font-weight: 700;
+}
+
+.homeHeader p {
+  margin: 12px 0 0;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 750px;
+}
+
+/* =====================================================
+   HOME CARDS
+   ===================================================== */
+
+.dashboardGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.dashboardCard {
+  width: 100%;
+  min-height: 350px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 32px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.dashboardCard:hover {
+  transform: translateY(-5px);
+  border-color: #bfdbfe;
+  box-shadow:
+    0 14px 35px rgba(15, 23, 42, 0.1);
+}
+
+.dashboardCard:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* Card top */
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 38px;
+}
+
+.cardIcon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.cardArrow {
+  color: #9ca3af;
+  font-size: 24px;
+}
+
+/* Card text */
+
+.dashboardCard h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #111827;
+}
+
+.dashboardCard p {
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #6b7280;
+  max-width: 360px;
+}
+
+/* Card footer */
+
+.cardFooter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.cardLink {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cardFooterArrow {
+  color: #2563eb;
+  font-size: 19px;
+}
+
+/* =====================================================
+   INNER PAGES
+   ===================================================== */
+
+.page {
+  width: 100%;
+  padding: 30px 45px;
+  box-sizing: border-box;
+}
+
+.pageTitle {
+  margin-bottom: 28px;
+}
+
+.pageTitle h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #111827;
+}
+
+.pageTitle p {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* =====================================================
+   BACK BUTTON
+   ===================================================== */
+
+.pageHeader {
+  padding: 20px 45px 0;
+}
+
+.backButton {
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 0;
+  font-family: inherit;
+}
+
+.backButton:hover {
+  color: #2563eb;
+}
+
+/* =====================================================
+   EXECUTION
+   ===================================================== */
+
+.emptyState {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 65px 35px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.emptyStateIcon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.emptyState h2 {
+  margin: 0;
+  font-size: 21px;
+  color: #111827;
+}
+
+.emptyState p {
+  margin: 10px auto 0;
+  max-width: 500px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media screen and (max-width: 1000px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardCard {
+    min-height: 280px;
+  }
+
+  .topNavigation {
+    padding: 0 20px;
+  }
+
+  .navigation {
+    gap: 2px;
+  }
+
+  .navButton,
+  .activeNav {
+    padding: 8px 11px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .topNavigation {
+    height: auto;
+    padding: 14px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .navigation {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .navButton,
+  .activeNav {
+    white-space: nowrap;
+  }
+
+  .home {
+    padding: 30px 22px;
+  }
+
+  .homeHeader h1 {
+    font-size: 30px;
+  }
+
+  .page {
+    padding: 25px 22px;
+  }
+
+  .pageHeader {
+    padding: 18px 22px 0;
+  }
+}

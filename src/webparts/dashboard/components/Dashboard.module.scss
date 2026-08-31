@@ -1,0 +1,1280 @@
+/* =========================================================
+   DASHBOARD PAGE
+   ========================================================= */
+
+.dashboardPage {
+  width: 100%;
+  min-width: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f8fafc;
+  color: #172033;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+
+  h1 {
+    margin: 4px 0 8px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #172033;
+  }
+
+  p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+  }
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: #2563eb;
+}
+
+.refreshButton {
+  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  color: #334155;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #2563eb;
+  }
+}
+
+/* =========================================================
+   KPI GRID
+   ========================================================= */
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.kpiCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+  }
+}
+
+.kpiIcon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.kpiContent {
+  min-width: 0;
+
+  span {
+    display: block;
+    margin-bottom: 5px;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+  }
+
+  strong {
+    display: block;
+    color: #172033;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+/* Different KPI icon colors */
+
+.kpiCard:nth-child(1) .kpiIcon {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.kpiCard:nth-child(2) .kpiIcon {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.kpiCard:nth-child(3) .kpiIcon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.kpiCard:nth-child(4) .kpiIcon {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+/* =========================================================
+   SECONDARY METRICS
+   ========================================================= */
+
+.secondaryMetrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.metricCard {
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  span {
+    display: block;
+    margin-bottom: 6px;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+  }
+
+  strong {
+    color: #172033;
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+.metricCard:nth-child(1) strong {
+  color: #2563eb;
+}
+
+.metricCard:nth-child(2) strong {
+  color: #7c3aed;
+}
+
+.metricCard:nth-child(3) strong {
+  color: #059669;
+}
+
+.metricCard:nth-child(4) strong {
+  color: #dc2626;
+}
+
+/* =========================================================
+   CHART GRID
+   ========================================================= */
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.chartCard {
+  min-width: 0;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.chartGrid .chartCard {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   GENERAL CARD
+   ========================================================= */
+
+.dashboardCard {
+  min-width: 0;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+
+  h2 {
+    margin: 4px 0 5px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #172033;
+  }
+
+  p {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+  }
+}
+
+.cardEyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #2563eb;
+}
+
+.cardTotal {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   STATUS DISTRIBUTION
+   ========================================================= */
+
+.statusChartArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* =========================================================
+   DONUT
+   ========================================================= */
+
+.donutWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0 22px;
+}
+
+.donut {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.25s ease;
+}
+
+.donut:hover {
+  transform: scale(1.02);
+}
+
+.donut::before {
+  content: "";
+  position: absolute;
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.donutCenter {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  strong {
+    color: #172033;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  span {
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+  }
+}
+
+/* =========================================================
+   STATUS LEGEND / REFERENCE
+   ========================================================= */
+
+.legend {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 10px 18px;
+
+  margin-top: 4px;
+}
+
+.legendItem {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto auto;
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+
+  padding: 9px 11px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: #f8fafc;
+
+  cursor: default;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  span:not(.legendDot) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  strong {
+    color: #172033;
+    font-size: 12px;
+  }
+
+  small {
+    min-width: 30px;
+    text-align: right;
+
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  /* HOVER EFFECT */
+
+  &:hover {
+    background: #ffffff;
+    border-color: #dbe2ea;
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+    span:not(.legendDot) {
+      color: #172033;
+    }
+
+    strong {
+      color: #2563eb;
+    }
+
+    small {
+      color: #64748b;
+    }
+  }
+}
+
+/* =========================================================
+   LEGEND DOT
+   ========================================================= */
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.legendItem:hover .legendDot {
+  transform: scale(1.45);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+/* =========================================================
+   STATUS COLORS
+   ========================================================= */
+
+.legendItem:nth-child(1) .legendDot {
+  background: #2563eb;
+}
+
+.legendItem:nth-child(2) .legendDot {
+  background: #7c3aed;
+}
+
+.legendItem:nth-child(3) .legendDot {
+  background: #f59e0b;
+}
+
+.legendItem:nth-child(4) .legendDot {
+  background: #0891b2;
+}
+
+.legendItem:nth-child(5) .legendDot {
+  background: #16a34a;
+}
+
+.legendItem:nth-child(6) .legendDot {
+  background: #dc2626;
+}
+
+/* =========================================================
+   HOVER LABEL
+   Shows exactly what status the user is hovering over.
+   ========================================================= */
+
+.legendItem::after {
+  position: absolute;
+
+  left: 50%;
+  bottom: calc(100% + 8px);
+
+  transform: translateX(-50%) translateY(4px);
+
+  padding: 6px 10px;
+
+  border-radius: 6px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 20;
+
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* Tooltip text for each status */
+
+.legendItem:nth-child(1)::after {
+  content: "Lead";
+}
+
+.legendItem:nth-child(2)::after {
+  content: "Qualification";
+}
+
+.legendItem:nth-child(3)::after {
+  content: "Proposal";
+}
+
+.legendItem:nth-child(4)::after {
+  content: "Negotiation";
+}
+
+.legendItem:nth-child(5)::after {
+  content: "Won";
+}
+
+.legendItem:nth-child(6)::after {
+  content: "Lost";
+}
+
+/* Tooltip arrow */
+
+.legendItem::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: calc(100% + 2px);
+
+  transform: translateX(-50%);
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #172033;
+
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 19;
+
+  transition: opacity 0.18s ease;
+}
+
+/* Show tooltip */
+
+.legendItem:hover::after,
+.legendItem:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.legendItem:hover::after {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================================================
+   DOMAIN CHART
+   ========================================================= */
+
+.domainChart {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 8px;
+}
+
+.domainRow {
+  width: 100%;
+}
+
+.domainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 8px;
+
+  span {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  strong {
+    color: #172033;
+    font-size: 13px;
+    font-weight: 700;
+  }
+}
+
+.domainBar {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  background: #eef2f7;
+  border-radius: 999px;
+}
+
+.domainFill {
+  height: 100%;
+  min-width: 3px;
+  border-radius: 999px;
+
+  transition:
+    width 0.4s ease,
+    opacity 0.2s ease;
+}
+
+.domainRow:hover .domainFill {
+  opacity: 0.82;
+}
+
+/* =========================================================
+   DOMAIN COLORS
+   ========================================================= */
+
+.domainRow:nth-child(1) .domainFill {
+  background: #2563eb;
+}
+
+.domainRow:nth-child(2) .domainFill {
+  background: #7c3aed;
+}
+
+.domainRow:nth-child(3) .domainFill {
+  background: #0891b2;
+}
+
+.domainRow:nth-child(4) .domainFill {
+  background: #059669;
+}
+
+.domainRow:nth-child(5) .domainFill {
+  background: #d97706;
+}
+
+.domainRow:nth-child(6) .domainFill {
+  background: #dc2626;
+}
+
+/* Subtle colored backgrounds */
+
+.domainRow:nth-child(1) .domainBar {
+  background: #dbeafe;
+}
+
+.domainRow:nth-child(2) .domainBar {
+  background: #ede9fe;
+}
+
+.domainRow:nth-child(3) .domainBar {
+  background: #cffafe;
+}
+
+.domainRow:nth-child(4) .domainBar {
+  background: #d1fae5;
+}
+
+.domainRow:nth-child(5) .domainBar {
+  background: #fef3c7;
+}
+
+.domainRow:nth-child(6) .domainBar {
+  background: #fee2e2;
+}
+
+.domainFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+
+  span {
+    color: #94a3b8;
+    font-size: 11px;
+  }
+
+  span:last-child {
+    color: #64748b;
+    font-weight: 600;
+  }
+}
+
+/* =========================================================
+   PIPELINE TREND
+   ========================================================= */
+
+.chartLegend {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  i {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+}
+
+.pipelineLegend {
+  background: #2563eb;
+}
+
+.wonLegend {
+  background: #16a34a;
+}
+
+.pipelineChart {
+  position: relative;
+
+  display: flex;
+
+  width: 100%;
+  min-height: 280px;
+
+  margin-top: 8px;
+}
+
+.chartYAxis {
+  width: 48px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 5px 8px 34px 0;
+
+  box-sizing: border-box;
+
+  span {
+    color: #94a3b8;
+    font-size: 10px;
+    text-align: right;
+  }
+}
+
+.chartPlot {
+  position: relative;
+
+  flex: 1;
+  min-width: 0;
+  height: 280px;
+
+  border-bottom: 1px solid #dbe2ea;
+}
+
+.chartGridLines {
+  position: absolute;
+  inset: 0 0 34px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  pointer-events: none;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #eef2f7;
+  }
+}
+
+.barChart {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 34px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  gap: 12px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+}
+
+.pipelineColumn {
+  position: relative;
+
+  height: 100%;
+
+  flex: 1;
+  max-width: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  flex-direction: column;
+}
+
+.pipelineBar {
+  width: 48px;
+  max-width: 70%;
+
+  min-height: 0;
+
+  border-radius: 7px 7px 3px 3px;
+
+  background: #2563eb;
+
+  transition:
+    height 0.4s ease,
+    opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.82;
+  }
+}
+
+.pipelineTooltip {
+  position: absolute;
+
+  top: -24px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.pipelineColumn:hover .pipelineTooltip {
+  opacity: 1;
+}
+
+.pipelineMonth {
+  position: absolute;
+
+  bottom: -27px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.wonLine {
+  display: none;
+}
+
+.wonPoint {
+  display: none;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.summaryCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+  padding: 22px;
+
+  background: #172033;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+}
+
+.summaryItem {
+  flex: 1;
+  text-align: center;
+
+  span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #cbd5e1;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+  }
+
+  strong {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+.summaryDivider {
+  width: 1px;
+  height: 45px;
+
+  background: #475569;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.opportunityTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    padding: 11px 10px;
+
+    text-align: left;
+
+    color: #94a3b8;
+
+    border-bottom: 1px solid #e5eaf0;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 14px 10px;
+
+    border-bottom: 1px solid #eef2f6;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr:hover td {
+    background: #f8fafc;
+  }
+
+  td strong {
+    display: block;
+
+    color: #172033;
+
+    font-weight: 600;
+  }
+
+  td small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.stageBadge {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.wonBadge {
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  background: #dcfce7;
+  color: #15803d;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   LOADING / ERROR
+   ========================================================= */
+
+.loading,
+.errorState {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  h2 {
+    margin: 10px 0 5px;
+
+    font-size: 20px;
+
+    color: #172033;
+  }
+
+  p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+  }
+}
+
+.loadingIcon,
+.errorIcon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf0;
+
+  border-radius: 12px;
+
+  font-size: 22px;
+}
+
+.loadingIcon {
+  background: #eff6ff;
+}
+
+.errorIcon {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.errorState .refreshButton {
+  margin-top: 18px;
+}
+
+.noData {
+  padding: 30px 10px;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secondaryMetrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboardPage {
+    padding: 16px;
+  }
+
+  .dashboardHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .chartGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stageRow {
+    grid-template-columns: 110px minmax(60px, 1fr) 40px;
+  }
+
+  .legend {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chartLegend {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboardPage {
+    padding: 12px;
+  }
+
+  .dashboardHeader h1 {
+    font-size: 26px;
+  }
+
+  .secondaryMetrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chartCard,
+  .dashboardCard {
+    padding: 16px;
+  }
+
+  .donut {
+    width: 165px;
+    height: 165px;
+  }
+
+  .donut::before {
+    width: 108px;
+    height: 108px;
+  }
+
+  .legend {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryCard {
+    gap: 12px;
+  }
+
+  /*
+    On smaller screens the tooltip is moved below
+    the legend item so it does not get cut off.
+  */
+
+  .legendItem::after {
+    left: auto;
+    right: 0;
+
+    transform: translateY(4px);
+  }
+
+  .legendItem:hover::after {
+    transform: translateY(0);
+  }
+
+  .legendItem::before {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .secondaryMetrics {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryCard {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .summaryDivider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .summaryItem {
+    padding: 5px 0;
+  }
+
+  .dashboardHeader {
+    gap: 12px;
+  }
+
+  .pipelineChart {
+    min-height: 240px;
+  }
+
+  .chartPlot {
+    height: 240px;
+  }
+
+  .pipelineBar {
+    width: 35px;
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "opportunities-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/opportunities/OpportunitiesWebPart.js",
+          "manifest": "./src/webparts/opportunities/OpportunitiesWebPart.manifest.json"
+        }
+      ]
+    },
+    "tendering-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/tendering/TenderingWebPart.js",
+          "manifest": "./src/webparts/tendering/TenderingWebPart.manifest.json"
+        }
+      ]
+    },
+    "crm-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/crm/CrmWebPart.js",
+          "manifest": "./src/webparts/crm/CrmWebPart.manifest.json"
+        }
+      ]
+    },
+    "execution-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/execution/ExecutionWebPart.js",
+          "manifest": "./src/webparts/execution/ExecutionWebPart.manifest.json"
+        }
+      ]
+    },
+    "dashboard-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/dashboard/DashboardWebPart.js",
+          "manifest": "./src/webparts/dashboard/DashboardWebPart.manifest.json"
+        }
+      ]
+    },
+    "support-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/support/SupportWebPart.js",
+          "manifest": "./src/webparts/support/SupportWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "OpportunitiesWebPartStrings": "lib/webparts/opportunities/loc/{locale}.js",
+    "TenderingWebPartStrings": "lib/webparts/tendering/loc/{locale}.js",
+    "CrmWebPartStrings": "lib/webparts/crm/loc/{locale}.js",
+    "ExecutionWebPartStrings": "lib/webparts/execution/loc/{locale}.js",
+    "DashboardWebPartStrings": "lib/webparts/dashboard/loc/{locale}.js",
+    "SupportWebPartStrings": "lib/webparts/support/loc/{locale}.js"
+  }
+}

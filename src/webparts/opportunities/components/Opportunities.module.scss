@@ -1,0 +1,641 @@
+.salesPage {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 25px 0;
+
+  box-sizing: border-box;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 30px;
+  line-height: 1.2;
+
+  color: #111827;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 8px 0 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.primaryButton,
+.secondaryButton {
+  border-radius: 8px;
+
+  padding: 10px 16px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.primaryButton {
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.primaryButton:hover {
+  background: #1d4ed8;
+}
+
+.secondaryButton {
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+
+  color: #374151;
+}
+
+.secondaryButton:hover {
+  background: #f9fafb;
+}
+
+/* =====================================================
+   SEARCH / FILTERS
+   ===================================================== */
+
+.toolbar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.searchContainer {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 250px;
+}
+
+.searchContainer input {
+  width: 100%;
+
+  height: 42px;
+
+  padding: 0 15px 0 42px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 13px;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+.searchContainer input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.searchIcon {
+  position: absolute;
+
+  left: 14px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 15px;
+
+  color: #9ca3af;
+
+  pointer-events: none;
+}
+
+.filter {
+  height: 42px;
+
+  min-width: 160px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 13px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.filter:focus {
+  border-color: #2563eb;
+}
+
+/* =====================================================
+   RESULT COUNT
+   ===================================================== */
+
+.resultCount {
+  margin-bottom: 18px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.resultCount strong {
+  color: #111827;
+}
+
+/* =====================================================
+   MESSAGES
+   ===================================================== */
+
+.message,
+.error,
+.empty {
+  width: 100%;
+
+  padding: 35px 20px;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+.message {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  color: #6b7280;
+}
+
+.error {
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #b91c1c;
+}
+
+.empty {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  color: #6b7280;
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.cards {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  padding-bottom: 30px;
+}
+
+.card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+
+  border-color: #d1d5db;
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.cardHandedOver {
+  border-color: #86efac;
+}
+
+/* =====================================================
+   CARD HEADER
+   ===================================================== */
+
+.cardHeader {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.opportunityNumber {
+  color: #2563eb;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+}
+
+.revision {
+  margin-left: 8px;
+
+  color: #9ca3af;
+
+  font-weight: 500;
+}
+
+.cardHeader h2 {
+  margin: 5px 0 0;
+
+  color: #111827;
+
+  font-size: 18px;
+
+  line-height: 1.35;
+}
+
+/* =====================================================
+   STAGE
+   ===================================================== */
+
+.stage {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.stageProposal {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.stageNegotiation {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.stageQualification {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.stageNewLead {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.stageTendering {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.stageDefault {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* =====================================================
+   INFORMATION
+   ===================================================== */
+
+.cardInfo {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.infoBlock {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.label {
+  display: block;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+}
+
+.value {
+  color: #374151;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   METRICS
+   ===================================================== */
+
+.metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+
+  padding: 15px 0;
+
+  margin-bottom: 18px;
+
+  border-top: 1px solid #f3f4f6;
+
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.metric {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.metricValue {
+  color: #111827;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.description {
+  margin-bottom: 20px;
+}
+
+.description p {
+  margin: 7px 0 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.cardFooter {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr 0.8fr 0.8fr;
+
+  gap: 15px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #f3f4f6;
+}
+
+.footerItem {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  color: #374151;
+
+  font-size: 12px;
+}
+
+.handoverButton {
+  width: fit-content;
+
+  border: 1px solid #2563eb;
+
+  background: #ffffff;
+
+  color: #2563eb;
+
+  border-radius: 7px;
+
+  padding: 7px 10px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.handoverButton:hover {
+  background: #eff6ff;
+}
+
+.handoverButton:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.handedOverText {
+  color: #059669;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media screen and (max-width: 1100px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+
+  .header {
+    flex-direction: column;
+  }
+
+  .headerActions {
+    width: 100%;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  .searchContainer {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .filter {
+    flex: 1;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .headerActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .cardInfo,
+  .metrics,
+  .cardFooter {
+    grid-template-columns: 1fr;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter {
+    width: 100%;
+  }
+
+}
+
