@@ -54,6 +54,12 @@ const Opportunities: React.FC<IOpportunitiesProps> = ({
   const [handoverId, setHandoverId] =
     useState<number | null>(null);
 
+  const [showConfirmDialog, setShowConfirmDialog] =
+    useState<boolean>(false);
+
+  const [confirmingOpportunity, setConfirmingOpportunity] =
+    useState<IOpportunity | null>(null);
+
   /*
    * LOAD OPPORTUNITIES
    */
@@ -108,6 +114,95 @@ const Opportunities: React.FC<IOpportunitiesProps> = ({
       setLoading(false);
 
     }
+
+  };
+
+  /*
+   * HANDOVER TO TENDERING - SHOW CONFIRMATION
+   */
+
+  const showHandoverConfirm = (
+    opportunity: IOpportunity
+  ): void => {
+
+    setConfirmingOpportunity(opportunity);
+    setShowConfirmDialog(true);
+
+  };
+
+  /*
+   * HANDOVER TO TENDERING - CONFIRM
+   */
+
+  const confirmHandover = async (): Promise<void> => {
+
+    if (!confirmingOpportunity) {
+      return;
+    }
+
+    try {
+
+      setHandoverId(confirmingOpportunity.Id);
+      setError('');
+
+      const sp = getSP(context);
+
+      await sp.web.lists
+        .getByTitle('Opportunities')
+        .items
+        .getById(confirmingOpportunity.Id)
+        .update({
+          HandoverToTendering: true,
+          Stage: 'Handed Over to Tendering'
+        });
+
+      setOpportunities(previous =>
+        previous.map(item => {
+
+          if (item.Id === confirmingOpportunity.Id) {
+
+            return {
+              ...item,
+              HandoverToTendering: true,
+              Stage: 'Handed Over to Tendering'
+            };
+
+          }
+
+          return item;
+
+        })
+      );
+
+    } catch (err) {
+
+      console.error(
+        'Error handing over opportunity:',
+        err
+      );
+
+      setError(
+        'Unable to hand over this opportunity to Tendering.'
+      );
+
+    } finally {
+
+      setHandoverId(null);
+      setShowConfirmDialog(false);
+      setConfirmingOpportunity(null);
+
+    }
+
+  };
+
+  /*
+   * HANDOVER TO TENDERING - CANCEL
+   */
+
+  const cancelHandover = (): void => {
+
+    setShowConfirmDialog(false);
+    setConfirmingOpportunity(null);
 
   };
 
@@ -742,7 +837,7 @@ const Opportunities: React.FC<IOpportunitiesProps> = ({
                             opportunity.Id
                           }
                           onClick={() =>
-                            void handoverToTendering(
+                            showHandoverConfirm(
                               opportunity
                             )
                           }
@@ -824,6 +919,118 @@ const Opportunities: React.FC<IOpportunitiesProps> = ({
         </div>
 
       </main>
+
+      {/* CONFIRMATION DIALOG */}
+
+      {showConfirmDialog && confirmingOpportunity && (
+
+        <div className={styles.dialogOverlay}>
+
+          <div className={styles.dialogContainer}>
+
+            <div className={styles.dialogContent}>
+
+              <h2 className={styles.dialogTitle}>
+                Hand Over to Tendering
+              </h2>
+
+              <p className={styles.dialogSubtitle}>
+                You are about to move this opportunity to the Tendering Tracker.
+              </p>
+
+              <div className={styles.opportunityDetails}>
+
+                <div className={styles.detailItem}>
+
+                  <span className={styles.detailLabel}>
+                    Opportunity ID:
+                  </span>
+
+                  <span className={styles.detailValue}>
+                    {confirmingOpportunity.OpportunityNumber}
+                  </span>
+
+                </div>
+
+                <div className={styles.detailItem}>
+
+                  <span className={styles.detailLabel}>
+                    Title:
+                  </span>
+
+                  <span className={styles.detailValue}>
+                    {confirmingOpportunity.Title}
+                  </span>
+
+                </div>
+
+              </div>
+
+              <div className={styles.dialogSection}>
+
+                <h3 className={styles.sectionTitle}>
+                  What happens next:
+                </h3>
+
+                <ul className={styles.bulletList}>
+
+                  <li>
+                    Opportunity status will change to "Handed Over to Tendering"
+                  </li>
+
+                  <li>
+                    A new record will be created in the Tendering Tracker
+                  </li>
+
+                  <li>
+                    All linked documents and folder structure will be preserved
+                  </li>
+
+                </ul>
+
+              </div>
+
+              <div className={styles.dialogWarning}>
+
+                <p>
+                  <strong>⚠️ Warning:</strong> This action cannot be undone. The opportunity will no longer appear in the active Sales Tracker list.
+                </p>
+
+              </div>
+
+              <div className={styles.dialogActions}>
+
+                <button
+                  className={styles.confirmButton}
+                  onClick={() => void confirmHandover()}
+                  disabled={handoverId === confirmingOpportunity.Id}
+                >
+
+                  {handoverId === confirmingOpportunity.Id
+                    ? 'Confirming...'
+                    : 'Confirm'}
+
+                </button>
+
+                <button
+                  className={styles.cancelButton}
+                  onClick={cancelHandover}
+                  disabled={handoverId === confirmingOpportunity.Id}
+                >
+
+                  Cancel
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
 
     </div>
 
