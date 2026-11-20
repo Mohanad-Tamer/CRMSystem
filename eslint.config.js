@@ -3,7 +3,7 @@ const spfxProfile = require('@microsoft/eslint-config-spfx/lib/flat-profiles/rea
 module.exports = [
   ...spfxProfile,
   {
-    files: ['/*.ts', '/*.tsx'],
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
         tsconfigRootDir: __dirname,
